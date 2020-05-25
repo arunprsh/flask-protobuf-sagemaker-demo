@@ -1,8 +1,8 @@
 Click==7.0
 Flask==1.0.2
 itsdangerous==0.24
-Jinja2==2.10
-Werkzeug==0.14.1
+Jinja2>=2.10.1
+werkzeug>=0.15.3
 boto3~=1.13.16
 sagemaker
 Pillow~=7.1.2
