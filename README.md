@@ -28,7 +28,7 @@ the protobuf payload and invokes the MXNet Sagemaker endpoint to get the predict
 - Flask proxy then serializes the prediction response in protobuf format to send it back to the 
 client (which is returned to the user)
 
-P.S.: Ensure to run both container in `subnet` network mode to enable communication between them
+** P.S.: ** Ensure to run both container in `subnet` network mode to enable communication between them :+1:
 
 #### Other files:
 ##### 1. arlo-test-results.csv - contains latency test results for 1000 calls
