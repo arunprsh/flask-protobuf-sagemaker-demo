@@ -37,11 +37,16 @@ They are also used to generate the protobuf definitions `payload_pb2.py` and `re
 If you make any changes to the `.proto` files, you would have to re-generate the protobuf definitions by
 executing the following commands.
 
-```python
+```shell script
 $ python -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. payload.proto
 $ python -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. response.proto
 ```
 or run the `generate_definitions.sh` bash script 
+
+
+#### Load Test Config:
+- 1000 threads and 100 seconds ramp-up
+- Start 1 Thread every 0.1 second until all threads are started by the time the 100 seconds are up
 
 #### Other files:
 ##### 1. arlo-test-results.csv - contains latency test results for 1000 calls
