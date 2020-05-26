@@ -37,7 +37,7 @@ They are also used to generate the protobuf definitions `payload_pb2.py` and `re
 If you make any changes to the `.proto` files, you would have to re-generate the protobuf definitions by
 executing the following commands.
 
-```protobuf
+```shell script
 $ python -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. payload.proto
 $ python -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. response.proto
 ```
