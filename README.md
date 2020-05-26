@@ -30,6 +30,19 @@ client (which is returned to the user)
 
 **P.S.:** Ensure to run both container in `subnet` network mode to enable communication between them :+1:
 
+
+#### Steps to compile `.proto` files 
+The protocol buffer files are needed to define the schema of the payload (request and response).
+They are also used to generate the protobuf definitions `payload_pb2.py` and `response_pb2.py`.
+If you make any changes to the `.proto` files, you would have to re-generate the protobuf definitions by
+executing the following commands.
+
+```proto
+$ python -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. payload.proto
+$ python -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. response.proto
+```
+or run the `generate_defintiions.sh` bash script 
+
 #### Other files:
 ##### 1. arlo-test-results.csv - contains latency test results for 1000 calls
 ##### 2. latency.png shows latency results as a line graph for 1000 calls
