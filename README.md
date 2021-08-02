@@ -3,13 +3,13 @@
 
 
 
-#### 1. Setup `Flask Client` using arlo-client 
-- Build a docker image using the `Dockerfile` inside arlo-client
+#### 1. Setup `Flask Client` using client 
+- Build a docker image using the `Dockerfile` inside client
 - Push the container image to your ECR private registry
 
 
-#### 2. Setup `Flask Proxy` using arlo-proxy
-- Build a docker image using the `Dockerfile` inside arlo-client
+#### 2. Setup `Flask Proxy` using proxy
+- Build a docker image using the `Dockerfile` inside client
 - Push the container image to your ECR private registry
 
 
@@ -19,9 +19,9 @@
 
 
 #### 4. Create EC2 instance and setup Docker cluster with 2 containers (client & proxy)
-- Pull arlo-client & arlo-proxy images from ECR
-- Run arlo-client docker container - this starts flask client on port `8080`
-- Run arlo-proxy docker container - this starts flask proxy on port `8081`
+- Pull client & proxy images from ECR
+- Run client docker container - this starts flask client on port `8080`
+- Run proxy docker container - this starts flask proxy on port `8081`
 - Flask client receives the input image from the user. It serializes the received image in `protobuf` format
 - Flask proxy receives this payload in protobuf format from the client. It then deserializes 
 the protobuf payload and invokes the MXNet Sagemaker endpoint to get the prediction (label)
@@ -49,5 +49,5 @@ or run the `generate_definitions.sh` bash script
 - Start 1 Thread every 0.1 second until all threads are started by the time the 100 seconds are up
 
 #### Other files:
-##### 1. arlo-test-results.csv - contains latency test results for 1000 calls
+##### 1. test-results.csv - contains latency test results for 1000 calls
 ##### 2. latency.png shows latency results as a line graph for 1000 calls
